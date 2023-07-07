@@ -3,19 +3,19 @@ In bash, you can split a large file into multiple smaller files using the `split
 
 # Splitting by file size
 ```bash
-split -b 1M largefile.txt splitfile
+$ split -b 1M largefile.txt splitfile
 ```
 This command splits the file "largefile.txt" into smaller files with a maximum size of 1MB each. The resulting split files will be named "splitfileaa", "splitfileab", "splitfileac", and so on.
 
 # Splitting by number of lines
 ```bash
-split -l 1000 largefile.txt splitfile
+$ split -l 1000 largefile.txt splitfile
 ```
 This command splits the file "largefile.txt" into smaller files with a maximum of 1000 lines each. The resulting split files will be named "splitfileaa", "splitfileab", "splitfileac", and so on.
 
 # Customizing the output file names
 ```bash
-split -b 1M largefile.txt mysplitfiles/prefix-
+$ split -b 1M largefile.txt mysplitfiles/prefix-
 ```
 This command splits the file "largefile.txt" into smaller files with a maximum size of 1MB each. The resulting split files will be stored in the "mysplitfiles" directory with filenames starting with "prefix-".
 
@@ -24,7 +24,7 @@ To join the split files back together into a single file in bash, you can use th
 
 Assuming you have split files with names like "splitfileaa", "splitfileab", "splitfileac", and so on, you can use the following command to join them back together:
 ```bash
-cat splitfile* > largefile.txt
+$ cat splitfile* > largefile.txt
 ```
 This command uses the wildcard `*` to match all files with names starting with "splitfile" and concatenates them together into a single file named "largefile.txt".
 
